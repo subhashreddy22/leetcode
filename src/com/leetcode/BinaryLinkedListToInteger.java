@@ -41,7 +41,7 @@ public class BinaryLinkedListToInteger {
 		The current value is head.next.val. Update the result by shifting it by one to the left and adding the current value: num = num * 2 + head.next.val.
      * 
      * Time complexity: O(N).
-	 * Space complexity: O(1).
+     * Space complexity: O(1).
      */
 //    public int getDecimalValue(ListNode head) {
 //        int num = head.val;

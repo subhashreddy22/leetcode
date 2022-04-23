@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.array;
 
 
 /*
@@ -37,6 +37,7 @@ package com.leetcode;
 	1 <= m + n <= 2000
 	-106 <= nums1[i], nums2[i] <= 106
  */
+// https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/
 public class MedianOfTwoSortedArrays {
 	
 	public static void main(String[] args) {

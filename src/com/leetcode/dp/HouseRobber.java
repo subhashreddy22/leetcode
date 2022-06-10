@@ -1,6 +1,7 @@
 package com.leetcode.dp;
 
 // https://leetcode.com/problems/house-robber/
+// Sol: https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
 public class HouseRobber {
 
     public static void main(String[] args) {

@@ -1,5 +1,6 @@
 package com.leetcode.array;
 
+// https://leetcode.com/problems/maximize-distance-to-closest-person/
 public class MaximizeDistanceToClosestPerson {
 
     public static void main(String[] args) {

@@ -1,6 +1,7 @@
 package com.leetcode.dp;
 
 // https://leetcode.com/problems/delete-and-earn/
+// Sol: https://leetcode.com/problems/delete-and-earn/discuss/109895/JavaC%2B%2B-Clean-Code-with-Explanation
 public class DeleteAndEarn {
 
     public static void main(String[] args) {

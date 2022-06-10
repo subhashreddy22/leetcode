@@ -2,6 +2,7 @@ package com.leetcode.twopointers;
 
 import java.util.Arrays;
 
+// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 public class TwoSumSortedArray {
 
     public static void main(String[] args) {

@@ -39,6 +39,15 @@ public class BinaryTree {
         System.out.println("Count of Nodes -> " + countOfNodes(root));
         System.out.println("Sum of Nodes -> " + sumOfNodes(root));
         System.out.println("Height of Tree -> " + height(root));
+
+        Node subRoot = new Node(2);
+        subRoot.left = new Node(4);
+        subRoot.right = new Node(5);
+
+        System.out.println("Is Sub Tree -> " + isSubTree(root, subRoot));
+
+        Node LCA = lowestCommonAncestor(root, new Node(5), new Node(4));
+        System.out.println("Lowest Common Ancestor -> " + LCA.data);
     }
 
     static int index = -1;
@@ -153,5 +162,63 @@ public class BinaryTree {
         int rightHeight = height(root.right);
 
         return Math.max(leftHeight, rightHeight) + 1;
+    }
+
+    static boolean isSubTree(Node root, Node subRoot) {
+        if (subRoot == null) {
+            return true;
+        }
+
+        if (root == null) {
+            return false;
+        }
+
+        if (root.data == subRoot.data) {
+            if (isIdentical(root, subRoot)) {
+                return true;
+            }
+        }
+
+        return isSubTree(root.left, subRoot) || isSubTree(root.right, subRoot);
+    }
+
+    static boolean isIdentical(Node root, Node subRoot) {
+        if (root == null && subRoot == null) {
+            return true;
+        }
+
+        if (root == null || subRoot == null) {
+            return false;
+        }
+
+        if (root.data == subRoot.data) {
+            return isIdentical(root.left, subRoot.left) && isIdentical(root.right, subRoot.right);
+        }
+
+        return false;
+    }
+
+    static Node lowestCommonAncestor(Node root, Node n1, Node n2) {
+
+        if (root == null) {
+            return null;
+        }
+
+        if (root.data == n1.data || root.data == n2.data) {
+            return root;
+        }
+
+        Node leftLCA = lowestCommonAncestor(root.left, n1, n2);
+        Node rightLCA = lowestCommonAncestor(root.right, n1, n2);
+
+        if (leftLCA == null) {
+            return rightLCA;
+        }
+
+        if (rightLCA == null) {
+            return leftLCA;
+        }
+
+        return root;
     }
 }

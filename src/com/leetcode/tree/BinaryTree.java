@@ -48,6 +48,10 @@ public class BinaryTree {
 
         Node LCA = lowestCommonAncestor(root, new Node(5), new Node(4));
         System.out.println("Lowest Common Ancestor -> " + LCA.data);
+
+        Node invertedTreeRoot = invertTree(root);
+
+        preOrder(invertedTreeRoot);
     }
 
     static int index = -1;
@@ -220,5 +224,17 @@ public class BinaryTree {
         }
 
         return root;
+    }
+
+    static Node invertTree(Node root) {
+        if (root == null) {
+            return null;
+        }
+
+        Node tempNode = new Node(root.data);
+        tempNode.left = invertTree(root.right);
+        tempNode.right = invertTree(root.left);
+
+        return tempNode;
     }
 }

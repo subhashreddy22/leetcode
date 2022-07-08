@@ -1,8 +1,12 @@
 package com.leetcode.array;
 
-class SearchInRotatedSortedArray {
+public class SearchInRotatedSortedArray {
 
-    public int search(int[] nums, int target) {
+    public static void main(String[] args) {
+        System.out.println(search(new int[] {6, 7, 8 ,9, 1, 2, 3, 4, 5}, 3));
+    }
+
+    static int search(int[] nums, int target) {
         
         int l = 0;
         int r = nums.length - 1;

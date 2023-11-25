@@ -3,7 +3,14 @@ package com.leetcode.string;
 import java.util.HashMap;
 import java.util.Map;
 
+//https://leetcode.com/problems/longest-substring-without-repeating-characters/
 public class LongestSubstringWithoutRepetition {
+
+    public static void main(String[] args) {
+        LongestSubstringWithoutRepetition underTest = new LongestSubstringWithoutRepetition();
+        System.out.println(underTest.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(underTest.alternateLengthOfLongestSubstring("abcabcbb"));
+    }
 
     /* the basic idea is, keep a hashmap which stores the characters in string as keys and their positions as values,
     and keep two pointers which define the max substring. move the right pointer to scan through the string ,
@@ -11,7 +18,7 @@ public class LongestSubstringWithoutRepetition {
     right of the same character last found. Note that the two pointers can only move forward. */
     public int lengthOfLongestSubstring(String s) {
 
-        if (s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return 0;
         }
 

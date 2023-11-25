@@ -22,7 +22,7 @@ public class LongestSubstringWithoutRepetition {
             return 0;
         }
 
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        Map<Character, Integer> map = new HashMap<>();
 
         int max = 0;
 

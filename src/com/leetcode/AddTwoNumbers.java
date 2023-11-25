@@ -56,12 +56,12 @@ public class AddTwoNumbers {
 		
 		// Both dummy node and result node point to the same instance of ListNode
 		// Whenever a result.next is defined it keeps getting added to dummy node
-		// result = result.next overwrites result but the dummy stays intact with the next nodes getting added to it
+		// result = result.next overwrites result but the dummy stays intact with the next nodes getting added to it.
 		// It can be checked by debugging
 		ListNode dummyNode = new ListNode();
 		ListNode result = dummyNode;
 		int carry = 0;
-		int sum = 0;
+		int sum;
 
 		while (l1 != null || l2 != null) {
 			sum = carry;
@@ -81,7 +81,6 @@ public class AddTwoNumbers {
 
 			result.next = new ListNode(sum % 10);
 			result = result.next;
-			sum = 0;
 		}
 		
 		// if carry exists once the loop ends add it to the linked list

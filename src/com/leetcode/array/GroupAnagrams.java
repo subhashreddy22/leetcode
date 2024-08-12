@@ -12,6 +12,7 @@ public class GroupAnagrams {
         System.out.println(groupAnagrams(new String[] {"eat","tea","tan","ate","nat","bat"}));
         System.out.println(groupAnagrams(new String[] {""}));
         System.out.println(groupAnagrams(new String[] {"a"}));
+        System.out.println(groupAnagrams(new String[] {"bdddddddddd","bbbbbbbbbbc"}));
     }
 
     private static List<List<String>> groupAnagrams(String[] strs) {
@@ -28,6 +29,7 @@ public class GroupAnagrams {
             StringBuilder sb = new StringBuilder();
 
             for (int i = 0; i < 26; i++) {
+                sb.append('#'); // this is needed for cases when key becomes which happens for example {"bdddddddddd","bbbbbbbbbbc"}
                 sb.append(count[i]);
             }
 

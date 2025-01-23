@@ -29,7 +29,7 @@ public class GroupAnagrams {
             StringBuilder sb = new StringBuilder();
 
             for (int i = 0; i < 26; i++) {
-                sb.append('#'); // this is needed for cases when key becomes which happens for example {"bdddddddddd","bbbbbbbbbbc"}
+                sb.append('#'); // this is needed for cases when key becomes same which happens for example {"bdddddddddd","bbbbbbbbbbc"}
                 sb.append(count[i]);
             }
 

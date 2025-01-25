@@ -1,7 +1,6 @@
 package com.leetcode.array;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 // https://leetcode.com/problems/top-k-frequent-elements/
@@ -20,10 +19,13 @@ public class TopKFrequentElements {
         }
 
         // max-heap
-        Queue<Integer> queue = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a)); // comparator to store in descending order
+        Queue<Integer> queue = new PriorityQueue<>((a, b) -> map.get(a) - map.get(b)); // comparator to store in ascending order
 
         for (int i : map.keySet()) {
             queue.add(i);
+            if (queue.size() > k) { // if size of queue goes beyond k remove the 1st element (least occurring element in qeueu)
+                queue.poll(); // this ensures the priority queue size remains k and resulting in O(nlog(k)) time complexity
+            }
         }
 
         List<Integer> result = new ArrayList<>();

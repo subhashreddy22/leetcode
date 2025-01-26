@@ -14,6 +14,7 @@ public class TwoSumSortedArray {
         int l = 0, r = numbers.length - 1;
         int[] result = new int[2];
 
+        // modification of binary search
         while (l < r) {
             if (numbers[l] + numbers[r] == target) {
                 result[0] = l;

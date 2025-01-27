@@ -1,9 +1,9 @@
-package com.leetcode.string;
+package com.leetcode.slidingwindow;
 
 import java.util.HashMap;
 import java.util.Map;
 
-//https://leetcode.com/problems/longest-substring-without-repeating-characters/
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/
 public class LongestSubstringWithoutRepetition {
 
     public static void main(String[] args) {
@@ -25,12 +25,15 @@ public class LongestSubstringWithoutRepetition {
         Map<Character, Integer> map = new HashMap<>();
         int max = 0;
 
-        for (int i = 0, j = 0; i < s.length(); i++) {
-            if (map.containsKey(s.charAt(i))) {
-                j = Math.max(j, map.get(s.charAt(i)) + 1);
+        for (int left = 0, right = 0; right < s.length(); right++) {
+            char ch = s.charAt(right);
+
+            if (map.containsKey(ch)) {
+                left = Math.max(left, map.get(ch) + 1);
             }
-            map.put(s.charAt(i), i);
-            max = Math.max(max, i - j + 1);
+
+            map.put(ch, right);
+            max = Math.max(max, right - left + 1);
         }
 
         return max;
